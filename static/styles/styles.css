@@ -1,0 +1,340 @@
+main {
+    min-height: 400px;
+}
+
+.titulo {
+    cursor: default;
+    text-align: center;
+    padding: 20px;
+}
+
+.subtitulo {
+    cursor: default;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.sticky {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+}
+
+.user__image-thumbnail {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+/* ------ LOGIN / REGISTER ------ */
+
+.user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user__form {
+    margin: auto;
+    box-shadow: 0px 0px 5px #808080;
+    padding: 15px;
+}
+
+.user__form label {
+    padding-right: 10px;
+}
+
+.user__form input {
+    border: 1px solid #808080;
+    outline: none;
+}
+
+.message-error {
+    color: red;
+}
+
+.user__btn {
+    display: flex;
+    justify-content: center;
+}
+
+/* ------ PROFILE / UPDATE_PROFILE ------ */
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: fit-content;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.profile__image {
+    width: 12rem;
+    border-radius: 5px;
+}
+
+.profile__information {
+    width: fit-content;
+    padding: 1rem;
+}
+
+.profile__information p {
+    font-weight: bold;
+}
+
+.profile__information span {
+    font-weight: normal;
+}
+
+.profile__subtitulo {
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.profile__form {
+    width: fit-content;
+}
+
+.profile__form label {
+    padding-right: 10px;
+}
+
+.profile__btn {
+    display: flex;
+    justify-content: center;
+}
+
+/* ------ LOGOUT ------ */
+
+.message {
+    text-align: center;
+}
+
+/* ------ INDEX ------ */
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-index {
+    text-align: center;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    width: fit-content;
+    margin: 10px;
+}
+
+.card-index__name {
+    color: #000000;
+}
+
+.card-index__name:hover {
+    color: #808080;
+    text-decoration: none;
+}
+.card-index__image {
+    width: 18rem;
+    display: block;
+}
+
+/* ------ LIST_PRODUCTS / LIST_FACE / LIST_BODY ------ */
+
+.products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product {
+    text-align: center;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    width: fit-content;
+    margin: 10px;
+}
+
+.product__image {
+    width: 16rem;
+}
+
+.product__image:hover {
+    opacity: 0.6;
+}
+
+.product__title {
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 576px) {
+    .product__image {
+        width: 10rem;
+    }
+}
+
+/* ------ DETAIL_PRODUCT ------ */
+
+.detail-product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.detail-product__image {
+    width: 16rem;
+}
+
+.detail-product__body {
+    width: 50%;
+    padding: 50px;
+}
+
+.detail-product__title {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.detail-product__description {
+    text-align: justify;
+}
+
+.detail-product__price {
+    text-align: center;
+}
+
+.detail-product__stock {
+    text-align: center;
+}
+
+.detail-product__btn {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    margin: auto;
+}
+
+@media only screen and (max-width: 992px) {
+    .detail-product__body {
+        width: 90%;
+    }
+    .detail-product__image {
+        width: 10rem;
+    }
+}
+
+/* ------ CREATE_PRODUCT / UPDATE_PRODUCT / DELETE_PRODUCT / CREATE_CARD / UPDATE_CARD / DELETE_CARD ------ */
+
+.form-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min-content;
+    margin: auto;
+}
+
+.form-product label {
+    padding-right: 10px;
+}
+
+.form-product__btn {
+    display: flex;
+}
+
+/* ------ ABOUT ------ */
+
+.about {
+    margin: 20px;
+}
+
+.about__image {
+    max-width: 300px;
+    margin: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.about__description {
+    padding: 50px;
+    margin: auto;
+}
+
+.about__description span {
+    color: #808080;
+}
+
+/* ------ UBICACIÓN ------ */
+
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.location__description {
+    color: #808080;
+}
+
+@media only screen and (max-width: 576px) {
+    .location__map {
+        max-width: fit-content;
+    }
+}
+
+/* ------ FOOTER ------ */
+
+.footer {
+    background-color: #cccccc50;
+    margin-top: 50px;
+    padding: 2rem;
+    padding-left: 0;
+    cursor: default;
+}
+
+.footer li {
+    list-style: none;
+    border-left: solid 1px #cccccc;
+}
+
+.footer li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.footer li a:hover {
+    color: #808080;
+}
+
+.footer .footer__logo {
+    border: none;
+    padding-bottom: 10px;
+}
+
+.footer li p {
+    font-weight: 600;
+}
+
+.footer__email {
+    border: 1px solid #808080;
+    outline: none;
+    width: 60%;
+}
+
+.footer__btn {
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.footer__btn:hover {
+    background-color: #808080;
+}

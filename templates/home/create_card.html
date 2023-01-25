@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Crear Card
+{% endblock %}
+
+{% block content %}
+  <section>
+    {% if form %}
+      <h1 class="titulo">Crear Card</h1>
+      <form class="form-product" action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+          {{form.as_table}}
+        </table>
+        <div class="form-product__btn">
+          <input class="btn btn-secondary m-2" type="submit" value="Crear">
+          <a href="/" class="btn btn-secondary m-2">Cancelar</a>
+        </div>
+      </form>
+    {% endif %}
+  </section>
+{% endblock %}

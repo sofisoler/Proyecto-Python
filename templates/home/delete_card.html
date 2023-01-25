@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Eliminar Card
+{% endblock %}
+
+{% block content %}
+  <h1 class="titulo">Esta por eliminar: {{object.nombre}}</h1>
+  <p class="subtitulo">¿Seguro que desea eliminar la card?</p>
+  <form class="form-product" action="" method="POST">
+    {% csrf_token %}
+    <div class="form-product__btn">
+      <input class="btn btn-secondary m-2" type="submit" value="Si, eliminar">
+      <a href="/" class="btn btn-secondary m-2">Cancelar</a>
+    </div>
+  </form>
+{% endblock %}

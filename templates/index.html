@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Inicio
+{% endblock %}
+
+{% block active-index %}
+  active
+{% endblock %}
+
+{% block content %}
+  <section>
+    <h1 class="titulo">Nuestros Tratamientos</h1>
+    {% if request.user.is_superuser %}
+      <p class="subtitulo">Crear nueva card
+        <a href="/home/create-card/" class="btn btn-secondary">Crear</a>
+      </p>
+    {% endif %}
+    <div class="cards">
+      {% for card in cards %}
+        <div class="card-index">
+          <a href="/products/list-{{card.categoria}}/" class="card-index__name">{{card.nombre}}
+            {% if card.imagen %}
+              <img src="{{card.imagen.url}}" alt="facial" class="card-index__image">
+            {% endif %}
+            {% if request.user.is_superuser %}
+              <a href="/home/update-card/{{card.id}}/" class="btn btn-secondary">Actualizar</a>
+              <a href="/home/delete-card/{{card.id}}/" class="btn btn-danger">Eliminar</a>
+            {% endif %}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

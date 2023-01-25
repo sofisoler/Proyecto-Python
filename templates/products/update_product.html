@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Actualizar Producto
+{% endblock %}
+
+{% block content %}
+  <section>
+    {% if form %}
+      <h1 class="titulo">Actualizar: {{object.nombre}}</h1>
+      <form class="form-product" action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+          {{form.as_table}}
+        </table>
+        <div class="form-product__btn">
+          <input class="btn btn-secondary m-2" type="submit" value="Actualizar">
+          <a href="/products/admin-products/" class="btn btn-secondary m-2">Cancelar</a>
+        </div>
+      </form>
+    {% endif %}
+  </section>
+{% endblock %}

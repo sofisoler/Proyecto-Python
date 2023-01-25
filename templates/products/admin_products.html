@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Administración
+{% endblock %}
+
+{% block active-admin-products %}
+  active
+{% endblock %}
+
+{% block content %}
+  <section>
+    <h1 class="titulo">Administración</h1>
+    <p class="subtitulo">Crear nuevo producto
+      <a href="/products/create-product/" class="btn btn-secondary">Crear</a>
+    </p>
+    <div class="products">
+      {% for product in products %}
+        <div class="product">
+          {% if product.imagen %}
+            <img class="product__image"src="{{product.imagen.url}}" class="card-img-top" alt="...">
+          {% endif %}
+          <div>
+            <h2 class="product__title">{{product.nombre}}</h2>
+            <p>Precio: ${{product.precio}}</p>
+              {% if product.stock == True %}
+                <p>¡Disponible!</p>
+              {% else %}
+                <p>Sin disponibilidad</p>
+              {% endif %}
+              <a href="/products/update-product/{{product.id}}/" class="btn btn-secondary">Actualizar</a>
+              <a href="/products/delete-product/{{product.id}}/" class="btn btn-danger">Eliminar</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

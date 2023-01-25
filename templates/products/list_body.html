@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Corporal
+{% endblock %}
+
+{% block active-products %}
+  active
+{% endblock %}
+
+{% block content %}
+  <section>
+    <h1 class="titulo">Tratamientos Corporales</h1>
+    <div class="products">
+      {% for product in body %}
+        <div class="product">
+          {% if product.imagen %}
+            <img class="product__image"src="{{product.imagen.url}}" class="card-img-top" alt="...">
+          {% endif %}
+          <div>
+            <h2 class="product__title">{{product.nombre}}</h2>
+            <a href="/products/detail-product/{{product.id}}/" class="btn btn-secondary">Ver detalles</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

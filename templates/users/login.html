@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Ingresar
+{% endblock %}
+
+{% block active-login %}
+  active
+{% endblock %}
+
+{% block content %}
+<section>
+  <h1 class="titulo">Iniciar Sesión</h1>
+  <div class="user">
+    {% if form %}
+    <form class="user__form" action="" method="POST">
+      {% csrf_token %}
+      <table>
+        {{form.as_table}}
+      </table>
+      {% if errors %}
+        <p class="message-error">Error: {{errors}}</p>
+      {% endif %}
+      <div class="user__btn pt-2">
+        <input type="submit" value="Ingresar" class="btn btn-secondary">
+      </div>
+    </form>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

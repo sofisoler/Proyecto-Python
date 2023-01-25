@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Perfil
+{% endblock %}
+
+{% block active-user %}
+  active
+{% endblock %}
+
+{% block content %}
+  <section>
+    <h1 class="titulo">Mi Perfil</h1>
+    <div class="profile">
+      {% if request.user.profile.profile_picture.url != '' %}
+        <img class="profile__image"src="{{request.user.profile.profile_picture.url}}" class="card-img-top" alt="profile_picture">
+      {% endif %}
+      <div class="profile__information">
+        <p>Nombre de usuario: <span>{{user.username}}</span></p>
+        <p>Nombre: <span>{{user.first_name}}</span></p>
+        <p>Apellido: <span>{{user.last_name}}</span></p>
+        <p>Teléfono: <span>{{user.profile.phone}}</span></p>
+        <p>Fecha de nacimiento: <span>{{user.profile.birth_date}}</span></p>
+      </div>
+    </div>
+  </section>
+{% endblock %}

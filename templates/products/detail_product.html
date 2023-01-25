@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Detalles
+{% endblock %}
+
+{% block content %}
+  <section>
+    <h1 class="titulo">{{object.nombre}}</h1>
+    <div class="detail-product">
+      <div class="detail-product__image">
+        <img src="{{object.imagen.url}}" class="card-img-top" alt="...">
+      </div>
+      <div class="detail-product__body">
+        <h2 class="detail-product__title">Detalles</h2>
+        <p class="detail-product__description">{{object.descripcion}}</p>
+        {% if object.stock == True %}
+          <p class="detail-product__price">Precio: ${{object.precio}}</p>
+          <p class="detail-product__stock">¡Disponible!</p>
+        {% else %}
+          <p class="detail-product__stock">Sin disponibilidad</p>
+        {% endif %}
+        <a href="/location/" class="btn btn-secondary detail-product__btn">¡Pasa a conocernos!</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Editar Perfil
+{% endblock %}
+
+{% block active-user %}
+  active
+{% endblock %}
+
+{% block content %}
+  <section>
+    <h1 class="titulo">Editar Perfil</h1>
+    <div class="profile">
+      <h2 class="profile__subtitulo">Usuario</h2>
+      <div class="profile__information">
+        <p>Nombre de usuario: <span>{{user.username}}</span></p>
+        <p>Nombre: <span>{{user.first_name}}</span></p>
+        <p>Apellido: <span>{{user.last_name}}</span></p>
+        <div class="profile__btn">
+          <a href="/users/update/user/" class="btn btn-secondary">Actualizar</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile">
+      <h2 class="profile__subtitulo">Datos</h2>
+      <div class="profile__information">
+        {% if form %}
+          <form class="profile__form" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+              {{form.as_table}}
+            </table>
+            {% if errors %}
+              <p class="message-error">Error: {{errors}}</p>
+            {% endif %}
+            <div class="profile__btn">
+              <input type="submit" value="Actualizar" class="btn btn-secondary mt-3">
+            </div>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endblock %}
