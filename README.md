@@ -13,8 +13,10 @@ La web contiene una barra de navegación que cuenta con un buscardor y con las s
 - Administración: Sección solo para administradores donde pueden actualizar/borrar productos/tratamientos estéticos existentes, así como también crear nuevos.
 - Quienes Somos: Información ("about" del centro estético).
 - Donde Estamos: Ubicación del centro estético (se requiere loguearse para acceder).
+
 En caso de estar logueado:
 - Perfil: Donde el usuario puede ver todos sus datos y editarlos.
+
 Caso contrario:
 - Registrarse: Registrar usuario.
 - Ingresar: Iniciar sesión.
